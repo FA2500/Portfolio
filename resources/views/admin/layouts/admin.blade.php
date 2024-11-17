@@ -66,7 +66,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('admin.aboutme.index')}}">
-                <span class="menu-title">Aboutme</span>
+                <span class="menu-title">About Me</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
             </li>

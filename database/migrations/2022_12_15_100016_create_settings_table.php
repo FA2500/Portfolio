@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('about_title')->nullable();
-            $table->string('about_description')->nullable();
+            $table->text('about_description')->nullable();
             $table->string('about_photo')->nullable();
             $table->string('fb_url')->nullable();
             $table->string('github_url')->nullable();

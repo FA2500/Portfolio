@@ -12,10 +12,3 @@ This is a Portfolio landing page built with Laravel, It has a full control panel
 5. Change database information in `.env`
 6. Run migrations by executing `php artisan migrate` , Then Run  `php artisan db:seed` to use faker settings in database,
 7. Start the project by running `php artisan serve`
-
-### Demo Account
-- AdminURL: http://127.0.0.1:8000/admin
-- Email: test@example.com
-- Password: password
-
-

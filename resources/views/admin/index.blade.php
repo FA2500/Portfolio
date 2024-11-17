@@ -7,7 +7,7 @@
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white me-2">
           <i class="mdi mdi-home"></i>
-        </span> Welcome to Admin Page Dear/ <b>{{ $auth_user }}</b>
+        </span> Welcome to Admin Page <b>{{ $auth_user }}</b>
       </h3>
 
       

@@ -30,7 +30,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword4">Description</label>
-            <input type="text" class="form-control" id="exampleInputPassword4" name="description" placeholder="Description" value="{{old('description')}}" required>
+            <textarea class="form-control" id="exampleInputPassword4" rows="4" name="description" placeholder="Description" required>{{old('description')}} </textarea>
           </div>
           <div class="form-group">
             <label for="exampleSelectGender">Type</label>
@@ -45,7 +45,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">From</label>
                 <div class="col-sm-9">
-                  <input type="text" name="from" class="form-control"  value="{{old('from')}}" required/>
+                  <input type="date" name="from" class="form-control"  value="{{old('from')}}" required/>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label">End</label>
                 <div class="col-sm-9">
-                  <input type="text" name="to" class="form-control" value="{{old('to')}}" required/>
+                  <input type="date" name="to" class="form-control" value="{{old('to')}}" required/>
                 </div>
               </div>
             </div>

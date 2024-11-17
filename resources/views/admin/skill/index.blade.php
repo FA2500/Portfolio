@@ -17,7 +17,7 @@
                             <tr>
                               <th> # </th>
                               <th> Skill </th>
-                              <th> Percent </th>
+                              <th> Rate </th>
                               <th> Manage </th>
                             </tr>
                           </thead>
@@ -27,10 +27,8 @@
                               <td> {{ $skill -> id }} </td>
                               <td> {{ $skill -> name }} </td>
                               <td> 
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{$skill->percent}}%; background-color: {{$skill->color}}" aria-valuenow="{{$skill->percent}}" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>    
-                                </td>
+                                                              {{ $skill->rate }} 
+                              </td>
                               <td> 
                                 <button type="button" class="btn btn-success btn-sm me-1 " onclick="location.href='{{ route('admin.skill.edit', $skill->id) }}';">Edit</button>
                                   <form type="submit" method="POST" style="display: inline" action="{{ route('admin.skill.destroy', $skill->id)}}" onsubmit="return confirm('Are you sure?')">
