@@ -23,8 +23,6 @@ class AboutmeController extends Controller
          'birth_day',
          'profile_pic',
          'experience')->where('id',1)->first();
-        //     dd($user);
-        // $user = User::first();
         return view('admin.aboutme.index', compact('user'));
     }
 
@@ -43,12 +41,11 @@ class AboutmeController extends Controller
         'image' => 'image|mimes:jpeg,png,jpg|max:2048',
     ]);
 
-    if($request->hasfile('image')){
-        if($user->profile_pic != null){
+    if ($request->hasFile('image')) {
+        if (!empty($user->profile_pic)) {
             Storage::delete($user->profile_pic);
         }
-        $get_new_file = $request->file('image')->store('images');
-        $user->profile_pic = $get_new_file;
+        $user->profile_pic = $request->file('image')->store('public/images');
     }
 
     $user->update($validated);

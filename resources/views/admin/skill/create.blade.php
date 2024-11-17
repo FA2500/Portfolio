@@ -36,9 +36,13 @@
             </div>
             <div class="col-md-6">
               <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Percent</label>
+                <label class="col-sm-3 col-form-label">Rate</label>
                 <div class="col-sm-9">
-                  <input type="text" name="percent" class="form-control" placeholder="from 1 to 100" value="{{old('percent')}}" required/>
+                  <select class="form-control" name="rate" required>
+                    @foreach (\App\Enums\Skill::cases() as $skill)
+                        <option value="{{ $skill->value }}" {{ old('percent') == $skill->value ? 'selected' : '' }}>{{ $skill->name }}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
             </div>

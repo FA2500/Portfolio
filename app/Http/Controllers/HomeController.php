@@ -36,9 +36,7 @@ class HomeController extends Controller
         $experiences = Qualification::where('type',['Work'])->orderBy('id', 'desc')->take(3)->get();
         $educations = Qualification::where('type',['Education'])->orderBy('id', 'desc')->take(3)->get();
 
-        $skills = Skill::orderBy('id', 'desc')->take(6)->get();
-
-        $services = Service::take(6)->get();
+        $skills = Skill::orderBy('id', 'asc')->take(6)->get();
 
         $categories = Category::all();
         $reviewers = Review::orderBy('id', 'desc')->take(5)->get();
@@ -47,7 +45,7 @@ class HomeController extends Controller
 
         $setting = Setting::first();
 
-        return view('home',compact('user','experiences','educations','skills',
-                                    'services','categories','portfolios','setting','reviewers'));
+        return view('home',compact('user','experiences','educations','skills'
+                                    ,'categories','portfolios','setting','reviewers'));
     }
 }

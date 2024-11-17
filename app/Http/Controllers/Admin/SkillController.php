@@ -41,7 +41,7 @@ class SkillController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:3',
             'color' => 'required|min:7',
-            'percent' => 'required|numeric|gt:0|lte:100',
+            'rate' => 'required|',
         ]);
         Skill::create($validated);
         return to_route('admin.skill.index')->with('message','New skill Added');

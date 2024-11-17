@@ -33,13 +33,13 @@ class SettingController extends Controller
         $validated = $request->validate([
             'about_title' => 'required','min:3',
             'about_description' => 'required','min:10',
-            'fb_url' => 'required|url',
-            'github_url' => 'required|url',
-            'linkedin_url' => 'required|url',
-            'freelance_url' => 'required|url',
-            'cv_url' => 'required|url',
-            'video_url' => 'required|url',
-            'contact_mail' => 'required|email',
+            'fb_url' => 'nullable|url',
+            'github_url' => 'nullable|url',
+            'linkedin_url' => 'nullable|url',
+            'freelance_url' => 'nullable|url',
+            'cv_url' => 'nullable|url',
+            'video_url' => 'nullable|url',
+            'contact_mail' => 'nullable|email',
             'about_photo' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 

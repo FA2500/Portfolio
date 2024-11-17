@@ -52,9 +52,11 @@ class PortfolioController extends Controller
         $portfolio->project_url = $validated['project_url'];
         $portfolio->cat_id = $request->cat_id;
 
-        if($request->hasfile('image')){
-            $get_file = $request->file('image')->store('images/portfolios');
-            $portfolio->image = $get_file;
+        if ($request->hasFile('image')) {
+            if (!empty($portfolio->image)) {
+                Storage::delete($portfolio->image);
+            }
+            $portfolio->image = $request->file('image')->store('public/images');
         }
 
         $portfolio->save();
@@ -93,10 +95,11 @@ class PortfolioController extends Controller
         $portfolio->project_url = $validated['project_url'];
         $portfolio->cat_id = $request->cat_id;
 
-        if($request->hasfile('image')){
-            Storage::delete($portfolio->image);
-            $get_file = $request->file('image')->store('images/portfolios');
-            $portfolio->image = $get_file;
+        if ($request->hasFile('image')) {
+            if (!empty($portfolio->image)) {
+                Storage::delete($portfolio->image);
+            }
+            $portfolio->image = $request->file('image')->store('public/images');
         }
 
         $portfolio->update();

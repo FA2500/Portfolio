@@ -26,7 +26,7 @@
                             @foreach ($portfolios as $portfolio)
                             <tr>
                               <td> {{ $portfolio -> id }} </td>
-                              <td> <img src="{{ asset("storage/$portfolio->image") }}" alt="image"> </td>
+                              <td> <img src="{{ Storage::url($portfolio->image) }}" alt="image"> </td>
                               {{-- <td> <i class="fab {{ $service -> icon }}"  aria-hidden="true"></i></td> --}}
                               <td> {{ $portfolio -> title }} </td>
                               <td> {{ $portfolio -> category-> name }} </td>

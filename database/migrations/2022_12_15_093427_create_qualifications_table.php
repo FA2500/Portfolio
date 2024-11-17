@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('type',['Education','Work']);
             $table->string('title');
             $table->string('association');
-            $table->string('description');
+            $table->text('description');
             $table->string('from');
             $table->string('to');
             $table->timestamps();
