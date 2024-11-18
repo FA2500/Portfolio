@@ -39,7 +39,7 @@
                 <label class="col-sm-3 col-form-label">Rate</label>
                 <div class="col-sm-9">
                   <select class="form-control" name="rate" required>
-                    @foreach (\App\Enums\Skill::cases() as $skill)
+                    @foreach (App\Enums\Skill::cases() as $skill)
                         <option value="{{ $skill->value }}" {{ old('percent') == $skill->value ? 'selected' : '' }}>{{ $skill->name }}</option>
                     @endforeach
                   </select>
